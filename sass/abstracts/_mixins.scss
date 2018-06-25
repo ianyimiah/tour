@@ -1,0 +1,28 @@
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;    
+    }
+}
+
+@mixin colGenerator($colspan, $numOfCols) {
+    @if $numOfCols == 1 {
+        width: 100%;
+    }
+    @else if $colspan > 1 {
+        $unitWidth: calc((100% - (#{$numOfCols} - 1)*#{$gutter-horizontal}) / #{$numOfCols});
+        $gutterFill: calc((#{$colspan} - 1) * #{$gutter-horizontal});
+        width: calc((#{$unitWidth} * #{$colspan}) +  #{$gutterFill});
+    }
+    @else {
+        width: calc((100% - (#{$numOfCols} - 1)*#{$gutter-horizontal}) / #{$numOfCols});
+    }
+    
+}
+
+// gradientBackgroundSection
+// gradientBackgroundText
+// animationFix
+// slanted clip path
