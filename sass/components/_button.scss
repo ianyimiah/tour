@@ -7,7 +7,7 @@
         padding: 1.5rem 4rem;
         display: inline-block;
         border-radius: 10rem;
-        backface-visibility: hidden;
+        // backface-visibility: hidden;
         /*This is a hack that fixes unwanted animation motions*/
         transition: .2s all;
         font-size: $default-font-size;
